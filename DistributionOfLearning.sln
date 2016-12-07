@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramLogicDll", "ProgramLogicDll\ProgramLogicDll.csproj", "{957F2553-FC90-4655-A7B4-3BF55A40057B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIApplication", "UIApplication\UIApplication.csproj", "{6E37E008-B460-4760-902B-2FBE1CCD208F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{957F2553-FC90-4655-A7B4-3BF55A40057B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{957F2553-FC90-4655-A7B4-3BF55A40057B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{957F2553-FC90-4655-A7B4-3BF55A40057B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E37E008-B460-4760-902B-2FBE1CCD208F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E37E008-B460-4760-902B-2FBE1CCD208F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E37E008-B460-4760-902B-2FBE1CCD208F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E37E008-B460-4760-902B-2FBE1CCD208F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
