@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProgramLogicDll
 {
     public class Audience
     {
-        public int Id { get; set; }
-        public Group Group { get; set; }
-        public List<Computer> Computers { get; set; }
+        [Key]
+        public int AudienceId { get; set; }
+        public int AudienceNumber { get; set; }
+        public virtual ICollection<Computer> Computers { get; set; }
+        public virtual ICollection<Group> Groups { get; set; }
     }
 }
