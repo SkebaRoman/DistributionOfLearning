@@ -15,6 +15,9 @@ namespace W
         public Form1()
         {
             InitializeComponent();
+            ConnectDb bd = new ConnectDb();
+            bd.Groups.Add(new ProgramLogicDll.Group() { Name = "sd" });
+            bd.SaveChanges();
         }
     }
 }
