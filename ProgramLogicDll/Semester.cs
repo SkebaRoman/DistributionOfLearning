@@ -8,6 +8,7 @@ namespace ProgramLogicDll
     {
         [Key]
         public int SemesterId { get; set; }
+        public int SemesterNumber { get; set; }
         public virtual List<Subject> Subjects { get; set; }
         public virtual List<Software> Sofwares { get; set; }
     }

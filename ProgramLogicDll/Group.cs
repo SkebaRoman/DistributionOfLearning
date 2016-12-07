@@ -13,8 +13,10 @@ namespace ProgramLogicDll
         public DateTime HoursOfStudy { get; set; }
         public int SemesterId { get; set; }
         public Semester Semester { get; set; }
-        public List<Student> Students { get; set; }
-        public Teacher Teacher { get; set; }
-        public int TeacherId { get; set; }
+        public int AudienceId { get; set; }
+        public Audience Audince { get; set; }
+        public virtual List<Student> Students { get; set; }
+        public virtual List<Teacher> Teacher { get; set; }
+     
     }
 }

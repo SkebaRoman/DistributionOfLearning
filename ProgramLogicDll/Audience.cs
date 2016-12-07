@@ -6,8 +6,8 @@ namespace ProgramLogicDll
     {
         [Key]
         public int AudienceId { get; set; }
-        public int GroupId { get; set; }
-        public Group Group { get; set; }
+        public int AudienceNumber { get; set; }
+        public List<Group> Group { get; set; }
         public virtual List<Computer> Computers { get; set; }
     }
 }
