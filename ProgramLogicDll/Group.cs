@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProgramLogicDll
 {
     public class Group
     {
-        public int Id { get; set; }
+        [Key]
+        public int GroupId { get; set; }
         public string Name { get; set; }
         public string Profession { get; set; }
         public DateTime HoursOfStudy { get; set; }
-        public Semester Semester { get; set; }
-        public List<Student> Students { get; set; }
-        public Teacher Teacher { get; set; }
+        public int SemesterId { get; set; }
+        public int AudienceId { get; set; }
+        public virtual Audience Audiences { get; set; }
+        public virtual Semester Semesters { get; set; }
+        public virtual ICollection<Student> Students { get; set; }
+        public virtual ICollection<Teacher> Teachers { get; set; }
     }
 }
