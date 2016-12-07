@@ -8,6 +8,7 @@ namespace ProgramLogicDll
         [Key]
         public int AudienceId { get; set; }
         public int AudienceNumber { get; set; }
+        public int NumberOfSeats { get; set; }
         public virtual ICollection<Computer> Computers { get; set; }
         public virtual ICollection<Group> Groups { get; set; }
     }
