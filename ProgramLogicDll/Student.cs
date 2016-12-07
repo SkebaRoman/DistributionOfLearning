@@ -15,6 +15,10 @@ namespace ProgramLogicDll
         public DateTime DateOfReceipt { get; set; }
         public DateTime ExpirationDate { get; set; }
         public int GroupId { get; set; }
+<<<<<<< HEAD
         public virtual Group grup { get; set; }
+=======
+        public virtual Group Groups { get; set; }
+>>>>>>> refs/remotes/origin/master
     }
 }
