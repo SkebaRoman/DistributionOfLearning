@@ -1,15 +1,14 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProgramLogicDll
 {
     public class Semester
     {
-        public int Id { get; set; }
-        public List<Subject> Subjects { get; set; }
-        public List<Software> Sofwares { get; set; }
+        [Key]
+        public int SemesterId { get; set; }
+        public virtual List<Subject> Subjects { get; set; }
+        public virtual List<Software> Sofwares { get; set; }
     }
 }

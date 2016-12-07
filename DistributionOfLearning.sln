@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.25928.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramLogicDll", "ProgramLogicDll\ProgramLogicDll.csproj", "{957F2553-FC90-4655-A7B4-3BF55A40057B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "W", "W\W.csproj", "{7EBA9DE1-284C-439C-AD89-C94B711E4F6D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{957F2553-FC90-4655-A7B4-3BF55A40057B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{957F2553-FC90-4655-A7B4-3BF55A40057B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{957F2553-FC90-4655-A7B4-3BF55A40057B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EBA9DE1-284C-439C-AD89-C94B711E4F6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EBA9DE1-284C-439C-AD89-C94B711E4F6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EBA9DE1-284C-439C-AD89-C94B711E4F6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EBA9DE1-284C-439C-AD89-C94B711E4F6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

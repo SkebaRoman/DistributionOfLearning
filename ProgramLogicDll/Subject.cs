@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 namespace ProgramLogicDll
 {
     public class Subject
     {
-        public int Id { get; set; }
+        [Key]
+        public int SubjectId { get; set; }
         public string Name { get; set; }
+        public virtual List<Teacher> teachers { get; set; }
     }
 }
