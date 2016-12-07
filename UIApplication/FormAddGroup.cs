@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace UIApplication
 {
-    public partial class FormMain : Form
+    public partial class FormAddGroup : Form
     {
-        public FormMain()
+        public FormAddGroup()
         {
             InitializeComponent();
-        }
-
-        private void newGroupToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormAddGroup form = new FormAddGroup();
-            form.ShowDialog();
         }
     }
 }
