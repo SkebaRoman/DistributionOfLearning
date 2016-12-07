@@ -51,10 +51,7 @@
   <ItemGroup>
     <Compile Include="Audience.cs" />
     <Compile Include="Computer.cs" />
-<<<<<<< HEAD
     <Compile Include="ConnectDb.cs" />
-=======
->>>>>>> origin/master
     <Compile Include="Group.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Semester.cs" />
@@ -62,13 +59,10 @@
     <Compile Include="Student.cs" />
     <Compile Include="Subject.cs" />
     <Compile Include="Teacher.cs" />
-<<<<<<< HEAD
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-=======
->>>>>>> origin/master
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
