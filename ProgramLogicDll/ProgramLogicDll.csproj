@@ -30,14 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -52,11 +44,14 @@
     <Compile Include="Audience.cs" />
     <Compile Include="Computer.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
     <Compile Include="ConnectDb.cs" />
 =======
 >>>>>>> origin/master
+>>>>>>> refs/remotes/origin/master
+=======
 >>>>>>> refs/remotes/origin/master
     <Compile Include="Group.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +61,7 @@
     <Compile Include="Subject.cs" />
     <Compile Include="Teacher.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
   </ItemGroup>
@@ -74,6 +70,11 @@
     <None Include="packages.config" />
 =======
 >>>>>>> origin/master
+>>>>>>> refs/remotes/origin/master
+=======
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
 >>>>>>> refs/remotes/origin/master
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
