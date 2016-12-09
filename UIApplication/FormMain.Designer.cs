@@ -45,7 +45,11 @@
             this.softwaresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView1 = new System.Windows.Forms.ListView();
             this.button1 = new System.Windows.Forms.Button();
+<<<<<<< HEAD
+            this.newTeacherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+=======
             this.newSubjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+>>>>>>> refs/remotes/origin/Roman
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +70,11 @@
             this.newToolStripMenuItem,
             this.newGroupToolStripMenuItem,
             this.newStudentToolStripMenuItem,
+<<<<<<< HEAD
+            this.newTeacherToolStripMenuItem});
+=======
             this.newSubjectToolStripMenuItem});
+>>>>>>> refs/remotes/origin/Roman
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.addToolStripMenuItem.Text = "Add";
@@ -138,6 +146,7 @@
             this.teachersToolStripMenuItem.Name = "teachersToolStripMenuItem";
             this.teachersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.teachersToolStripMenuItem.Text = "Teachers";
+            this.teachersToolStripMenuItem.Click += new System.EventHandler(this.teachersToolStripMenuItem_Click);
             // 
             // semestersToolStripMenuItem
             // 
@@ -174,12 +183,21 @@
             this.button1.Text = "GENERATE SCHEDULE";
             this.button1.UseVisualStyleBackColor = true;
             // 
+<<<<<<< HEAD
+            // newTeacherToolStripMenuItem
+            // 
+            this.newTeacherToolStripMenuItem.Name = "newTeacherToolStripMenuItem";
+            this.newTeacherToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newTeacherToolStripMenuItem.Text = "New teacher";
+            this.newTeacherToolStripMenuItem.Click += new System.EventHandler(this.newTeacherToolStripMenuItem_Click);
+=======
             // newSubjectToolStripMenuItem
             // 
             this.newSubjectToolStripMenuItem.Name = "newSubjectToolStripMenuItem";
             this.newSubjectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newSubjectToolStripMenuItem.Text = "New subject";
             this.newSubjectToolStripMenuItem.Click += new System.EventHandler(this.newSubjectToolStripMenuItem_Click);
+>>>>>>> refs/remotes/origin/Roman
             // 
             // FormMain
             // 
@@ -220,7 +238,11 @@
         private System.Windows.Forms.ToolStripMenuItem softwaresToolStripMenuItem;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button1;
+<<<<<<< HEAD
+        private System.Windows.Forms.ToolStripMenuItem newTeacherToolStripMenuItem;
+=======
         private System.Windows.Forms.ToolStripMenuItem newSubjectToolStripMenuItem;
+>>>>>>> refs/remotes/origin/Roman
     }
 }
 
