@@ -41,7 +41,6 @@
             this.listBoxStudents = new System.Windows.Forms.ListBox();
             this.listBoxTeachers = new System.Windows.Forms.ListBox();
             this.labelTeachers = new System.Windows.Forms.Label();
-            this.buttonClear = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -105,10 +104,12 @@
             // 
             // comboBoxSemester
             // 
+            this.comboBoxSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSemester.FormattingEnabled = true;
             this.comboBoxSemester.Location = new System.Drawing.Point(86, 84);
             this.comboBoxSemester.Name = "comboBoxSemester";
             this.comboBoxSemester.Size = new System.Drawing.Size(195, 21);
+            this.comboBoxSemester.Sorted = true;
             this.comboBoxSemester.TabIndex = 7;
             // 
             // labelStudents
@@ -145,32 +146,25 @@
             this.labelTeachers.TabIndex = 10;
             this.labelTeachers.Text = "Teachers:";
             // 
-            // buttonClear
-            // 
-            this.buttonClear.Location = new System.Drawing.Point(15, 316);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(75, 32);
-            this.buttonClear.TabIndex = 12;
-            this.buttonClear.Text = "Clear";
-            this.buttonClear.UseVisualStyleBackColor = true;
-            // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(109, 316);
+            this.buttonAdd.Location = new System.Drawing.Point(15, 316);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 32);
+            this.buttonAdd.Size = new System.Drawing.Size(101, 32);
             this.buttonAdd.TabIndex = 13;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(206, 316);
+            this.buttonCancel.Location = new System.Drawing.Point(180, 316);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 32);
+            this.buttonCancel.Size = new System.Drawing.Size(101, 32);
             this.buttonCancel.TabIndex = 14;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // FormAddGroup
             // 
@@ -179,7 +173,6 @@
             this.ClientSize = new System.Drawing.Size(293, 360);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonAdd);
-            this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.listBoxTeachers);
             this.Controls.Add(this.labelTeachers);
             this.Controls.Add(this.listBoxStudents);
@@ -197,6 +190,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormAddGroup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAddGroup";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -217,7 +211,6 @@
         private System.Windows.Forms.ListBox listBoxStudents;
         private System.Windows.Forms.ListBox listBoxTeachers;
         private System.Windows.Forms.Label labelTeachers;
-        private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonCancel;
     }

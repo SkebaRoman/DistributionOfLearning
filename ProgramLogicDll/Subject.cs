@@ -12,10 +12,13 @@ namespace ProgramLogicDll
         [Key]
         public int SubjectId { get; set; }
         public string Name { get; set; }
+<<<<<<< HEAD
         public int TeacherId { get; set; }
 <<<<<<< HEAD
 =======
         public int? Semester_SemesterId { get; set; }
+=======
+>>>>>>> refs/remotes/origin/master
         public virtual Semester Semesters { get; set; }
 >>>>>>> refs/remotes/origin/master
         public virtual Teacher Teachers { get; set; }

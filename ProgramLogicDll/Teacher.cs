@@ -14,11 +14,14 @@ namespace ProgramLogicDll
         public string Email { get; set; }
         public double Salary { get; set; }
 <<<<<<< HEAD
+<<<<<<< HEAD
         public List<Subject> Subjects { get; set; }
         public int GroupId { get; set; }
          public virtual Group group { get; set; }
 =======
         public int GroupId { get; set; }
+=======
+>>>>>>> refs/remotes/origin/master
         public virtual Group Groups { get; set; }
         public virtual ICollection<Subject> Subjects { get; set; }
 >>>>>>> refs/remotes/origin/master

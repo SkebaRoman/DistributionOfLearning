@@ -59,11 +59,53 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectDb.cs" />
+    <Compile Include="FormAddAudience.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddAudience.Designer.cs">
+      <DependentUpon>FormAddAudience.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAddGroup.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAddGroup.Designer.cs">
       <DependentUpon>FormAddGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddPC.Designer.cs">
+      <DependentUpon>FormAddPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddSoftware.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddSoftware.Designer.cs">
+      <DependentUpon>FormAddSoftware.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddStudent.Designer.cs">
+      <DependentUpon>FormAddStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddSubject.Designer.cs">
+      <DependentUpon>FormAddSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddTeacher.Designer.cs">
+      <DependentUpon>FormAddTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditTeacher.Designer.cs">
+      <DependentUpon>FormEditTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -73,8 +115,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAddAudience.resx">
+      <DependentUpon>FormAddAudience.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddGroup.resx">
       <DependentUpon>FormAddGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddPC.resx">
+      <DependentUpon>FormAddPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddSoftware.resx">
+      <DependentUpon>FormAddSoftware.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddStudent.resx">
+      <DependentUpon>FormAddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddSubject.resx">
+      <DependentUpon>FormAddSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddTeacher.resx">
+      <DependentUpon>FormAddTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditTeacher.resx">
+      <DependentUpon>FormEditTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>

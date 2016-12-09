@@ -22,5 +22,27 @@ namespace UIApplication
             FormAddGroup form = new FormAddGroup();
             form.ShowDialog();
         }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAddAudience form = new FormAddAudience();
+            form.ShowDialog();
+        }
+
+        private void newStudentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAddStudent form = new FormAddStudent();
+            form.ShowDialog();
+        }
+
+        private void newTeacherToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormAddTeacher().ShowDialog();
+        }
+
+        private void teachersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormEditTeacher().ShowDialog();
+        }
     }
 }
