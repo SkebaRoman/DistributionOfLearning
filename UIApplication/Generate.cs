@@ -10,10 +10,13 @@ namespace UIApplication
     {
         public static void DistributionOfStudents(ConnectDb db)
         {
-            db.Students
-            foreach (var item in )
+            List<KeyValuePair<int, string>> grups = new List<KeyValuePair<int, string>>();
+            foreach (var item in db.Groups)
             {
-
+                if(item.Students.Count()<item.Audiences.NumberOfSeats)
+                {
+                    grups.Add(new KeyValuePair<int, string>(item.GroupId, item.Profession));
+                }
             } 
 
         }
