@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProgramLogicDll
 {
     public class Teacher
     {
-        public int Id { get; set; }
+        [Key]
+        public int TeacherId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int Age { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public double Salary { get; set; }
-        public List<Subject> Subjects { get; set; }
+        public int GroupId { get; set; }
+        public virtual Group Groups { get; set; }
+        public virtual ICollection<Subject> Subjects { get; set; }
     }
 }
