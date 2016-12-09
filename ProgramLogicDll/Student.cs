@@ -15,14 +15,6 @@ namespace ProgramLogicDll
         public string Email { get; set; }
         public DateTime DateOfReceipt { get; set; }
         public DateTime ExpirationDate { get; set; }
-<<<<<<< HEAD
-        public int GroupId { get; set; }
-<<<<<<< HEAD
-        public virtual Group grup { get; set; }
-=======
-=======
->>>>>>> refs/remotes/origin/master
         public virtual Group Groups { get; set; }
->>>>>>> refs/remotes/origin/master
     }
 }
