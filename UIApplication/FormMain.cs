@@ -34,5 +34,15 @@ namespace UIApplication
             FormAddStudent form = new FormAddStudent();
             form.ShowDialog();
         }
+
+        private void newTeacherToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormAddTeacher().ShowDialog();
+        }
+
+        private void teachersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormEditTeacher().ShowDialog();
+        }
     }
 }

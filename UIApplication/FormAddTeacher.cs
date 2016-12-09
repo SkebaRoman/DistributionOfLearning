@@ -64,9 +64,18 @@ namespace UIApplication
                     PhoneNumber = textBox4.Text,
                     Email = textBox5.Text,
                     Salary = double.Parse(textBox6.Text),
-                    Subjects = subjects
+                    Subjects = subjects, Groups = null
+
                 });
                 dataBase.SaveChanges();
+                textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = textBox5.Text = textBox6.Text = "";
+                listBox2.Items.Clear();
+                listBox1.Items.Clear();
+                foreach (var item in dataBase.Subjects)
+                {
+                    listBox1.Items.Add(item.Name);
+                }
+                MessageBox.Show("Save");
             }
             else
             {
