@@ -16,5 +16,21 @@ namespace UIApplication
         {
             InitializeComponent();
         }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBoxGroupname.Text) || string.IsNullOrWhiteSpace(textBoxProfession.Text))
+            {
+                MessageBox.Show("Some fields are empty!");
+                return;
+            }
+
+            // TODO: logic
+        }
     }
 }
