@@ -7,8 +7,6 @@ namespace ProgramLogicDll
         [Key]
         public int SubjectId { get; set; }
         public string Name { get; set; }
-        public int TeacherId { get; set; }
-        public int? Semester_SemesterId { get; set; }
         public virtual Semester Semesters { get; set; }
         public virtual Teacher Teachers { get; set; }
     }
