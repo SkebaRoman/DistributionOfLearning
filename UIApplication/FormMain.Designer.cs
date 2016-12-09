@@ -34,7 +34,6 @@
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newComputerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editAudiencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,8 +64,7 @@
             this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
             this.newGroupToolStripMenuItem,
-            this.newStudentToolStripMenuItem,
-            this.newComputerToolStripMenuItem});
+            this.newStudentToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.addToolStripMenuItem.Text = "Add";
@@ -74,27 +72,23 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newToolStripMenuItem.Text = "New audience";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // newGroupToolStripMenuItem
             // 
             this.newGroupToolStripMenuItem.Name = "newGroupToolStripMenuItem";
-            this.newGroupToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.newGroupToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newGroupToolStripMenuItem.Text = "New group";
             this.newGroupToolStripMenuItem.Click += new System.EventHandler(this.newGroupToolStripMenuItem_Click);
             // 
             // newStudentToolStripMenuItem
             // 
             this.newStudentToolStripMenuItem.Name = "newStudentToolStripMenuItem";
-            this.newStudentToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.newStudentToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newStudentToolStripMenuItem.Text = "New student";
-            // 
-            // newComputerToolStripMenuItem
-            // 
-            this.newComputerToolStripMenuItem.Name = "newComputerToolStripMenuItem";
-            this.newComputerToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.newComputerToolStripMenuItem.Text = "New computer";
+            this.newStudentToolStripMenuItem.Click += new System.EventHandler(this.newStudentToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -204,7 +198,6 @@
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newGroupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newStudentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newComputerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editAudiencesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem groupsToolStripMenuItem;
