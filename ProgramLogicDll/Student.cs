@@ -13,7 +13,6 @@ namespace ProgramLogicDll
         public string PhoneNumber { get; set; }
         public string Profession { get; set; }
         public string Email { get; set; }
-        public string Profession { get; set; }
         public DateTime DateOfReceipt { get; set; }
         public DateTime ExpirationDate { get; set; }
 <<<<<<< HEAD

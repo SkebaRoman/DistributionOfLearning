@@ -107,7 +107,10 @@
     <Compile Include="FormEditTeacher.Designer.cs">
       <DependentUpon>FormEditTeacher.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/master
     <Compile Include="FormEditAudience.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,7 +172,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditTeacher.resx">
       <DependentUpon>FormEditTeacher.cs</DependentUpon>
+<<<<<<< HEAD
     </EmbeddedResource>
+=======
+      </EmbeddedResource>
+>>>>>>> refs/remotes/origin/master
     <EmbeddedResource Include="FormEditAudience.resx">
       <DependentUpon>FormEditAudience.cs</DependentUpon>
     </EmbeddedResource>
