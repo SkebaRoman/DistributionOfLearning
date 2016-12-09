@@ -18,23 +18,16 @@ namespace UIApplication
             InitializeComponent();
         }
 
-        private void FormAddSubject_Load(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            foreach (var item in db.Semesters)
-            {
-                listView1.Items.Add(item.SemesterNumber.ToString());
-            } 
+            db.Subjects.Add(new Subject() { Name = textBox1.Text});
+            db.SaveChanges();
+            MessageBox.Show("Save", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            textBox1.Text = string.Empty;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            Semester t;
-            if (listView1.SelectedItems.Count > 0)
-                t = db.Semesters.SingleOrDefault(x => x.SemesterNumber.ToString() == listView1.SelectedItems[0].ToString());
-            else
-                t = null;
-            db.Subjects.Add(new Subject() {Name=textBox1.Text,Teachers=null,Semesters=t});
-            db.SaveChanges();
             this.Close();
         }
     }
