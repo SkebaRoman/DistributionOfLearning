@@ -20,10 +20,24 @@ namespace UIApplication
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            db.Subjects.Add(new Subject() { Name = textBox1.Text});
-            db.SaveChanges();
-            MessageBox.Show("Save", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            textBox1.Text = string.Empty;
+            if (textBox1.Text != string.Empty)
+            {
+                if (db.Subjects.Where(name => name.Name == textBox1.Text).FirstOrDefault() == null)
+                {
+                    db.Subjects.Add(new Subject() { Name = textBox1.Text });
+                    db.SaveChanges();
+                    textBox1.Text = string.Empty;
+                    MessageBox.Show("Subject added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("This subject already exists", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Enter subject", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

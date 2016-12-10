@@ -28,9 +28,9 @@ namespace UIApplication
         {
             if (listBox1.SelectedIndex != -1)
             {
-                listBox2.Items.Add(listBox1.SelectedItems[0]);
-                subjects.Add(dataBase.Subjects.Where(subject => subject.Name == listBox1.SelectedItems[0].ToString()).FirstOrDefault());
-                listBox1.Items.RemoveAt(listBox2.SelectedIndex);
+                listBox2.Items.Add(listBox1.SelectedItem);
+                subjects.Add(dataBase.Subjects.Where(subject => subject.Name == listBox1.SelectedItem.ToString()).FirstOrDefault());
+                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
             }
             else
             {
@@ -42,9 +42,9 @@ namespace UIApplication
         {
             if (listBox2.SelectedIndex != -1)
             {
+                listBox1.Items.Add(listBox2.SelectedItem);
+                subjects.Remove(dataBase.Subjects.Where(subject => subject.Name == listBox2.SelectedItem.ToString()).FirstOrDefault());
                 listBox2.Items.RemoveAt(listBox2.SelectedIndex);
-                subjects.RemoveAt(listBox2.SelectedIndex);
-                listBox1.Items.Add(listBox2.SelectedItems[0]);
             }
             else
             {
@@ -64,18 +64,12 @@ namespace UIApplication
                     PhoneNumber = textBox4.Text,
                     Email = textBox5.Text,
                     Salary = double.Parse(textBox6.Text),
-                    Subjects = subjects, Groups = null
-
+                    Subjects = subjects
                 });
                 dataBase.SaveChanges();
-                textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = textBox5.Text = textBox6.Text = "";
-                listBox2.Items.Clear();
-                listBox1.Items.Clear();
-                foreach (var item in dataBase.Subjects)
-                {
-                    listBox1.Items.Add(item.Name);
-                }
-                MessageBox.Show("Save");
+                textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = textBox5.Text = textBox6.Text = string.Empty;
+                listBox2.Items.Clear(); UpdateSubjects();
+                MessageBox.Show("Teacher added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -83,10 +77,16 @@ namespace UIApplication
             }
         }
 
-        private void FormAddTeacher_Load(object sender, EventArgs e)
+        private void UpdateSubjects()
         {
+            listBox1.Items.Clear();
             foreach (var item in dataBase.Subjects)
                 listBox1.Items.Add(item.Name);
+        }
+
+        private void FormAddTeacher_Load(object sender, EventArgs e)
+        {
+            UpdateSubjects();
         }
     }
 }

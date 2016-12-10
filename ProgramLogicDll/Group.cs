@@ -10,7 +10,7 @@ namespace ProgramLogicDll
         public int GroupId { get; set; }
         public string Name { get; set; }
         public string Profession { get; set; }
-        public DateTime HoursOfStudy { get; set; }
+        public string HoursOfStudy { get; set; }
         public int SemesterId { get; set; }
         public int AudienceId { get; set; }
         public virtual Audience Audiences { get; set; }
