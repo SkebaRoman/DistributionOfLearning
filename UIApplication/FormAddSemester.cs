@@ -27,8 +27,18 @@ namespace UIApplication
         {
             if (textBox1.Text != string.Empty)
             {
-                dataBase.Semesters.Add(new ProgramLogicDll.Semester { SemesterNumber = int.Parse(textBox1.Text) });
-                dataBase.SaveChanges();
+                int number = int.Parse(textBox1.Text);
+                if (dataBase.Semesters.Where(sem => sem.SemesterNumber == number).FirstOrDefault() == null)
+                {
+                    dataBase.Semesters.Add(new ProgramLogicDll.Semester { SemesterNumber = int.Parse(textBox1.Text) });
+                    dataBase.SaveChanges();
+                    textBox1.Text = string.Empty;
+                    MessageBox.Show("Semester added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("This semester already exists", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
                 MessageBox.Show("Enter semester", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);

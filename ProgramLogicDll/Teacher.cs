@@ -13,7 +13,7 @@ namespace ProgramLogicDll
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public double Salary { get; set; }
-        public virtual Group Groups { get; set; }
+        public virtual ICollection<Group> Groups { get; set; }
         public virtual ICollection<Subject> Subjects { get; set; }
     }
 }

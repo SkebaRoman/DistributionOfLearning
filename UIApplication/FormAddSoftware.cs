@@ -25,8 +25,24 @@ namespace UIApplication
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataBase.Softwares.Add(new ProgramLogicDll.Software { Name = textBox1.Text });
-            dataBase.SaveChanges();
+            if (textBox1.Text != string.Empty)
+            {
+                if (dataBase.Softwares.Where(soft => soft.Name == textBox1.Text).FirstOrDefault() == null)
+                {
+                    dataBase.Softwares.Add(new ProgramLogicDll.Software { Name = textBox1.Text });
+                    dataBase.SaveChanges();
+                    textBox1.Text = string.Empty;
+                    MessageBox.Show("Software added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("This software already exists", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Enter software", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

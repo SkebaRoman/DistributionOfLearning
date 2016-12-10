@@ -13,7 +13,6 @@ namespace UIApplication
     public partial class FormEditSubject : Form
     {
         ProgramLogicDll.ConnectDb dataBase = new ProgramLogicDll.ConnectDb();
-        List<ProgramLogicDll.Subject> subjects = new List<ProgramLogicDll.Subject>();
         public FormEditSubject()
         {
             InitializeComponent();
@@ -24,22 +23,39 @@ namespace UIApplication
             this.Close();
         }
 
+        private void UpdateSubjects()
+        {
+            comboBox1.Items.Clear(); comboBox1.Text = string.Empty;
+            foreach (var item in dataBase.Subjects)
+                comboBox1.Items.Add(item.Name);
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex != -1&&textBox1.Text!=string.Empty)
+            if (textBox1.Text!=string.Empty && comboBox1.SelectedIndex!=-1)
             {
-                int Id = subjects[comboBox1.SelectedIndex].SubjectId;
-                dataBase.Subjects.Where(subject => subject.SubjectId == Id).FirstOrDefault().Name = textBox1.Text;
-                dataBase.SaveChanges();
-                MessageBox.Show("Save", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (dataBase.Subjects.Where(subject => subject.Name == textBox1.Text).FirstOrDefault() == null)
+                {
+                    dataBase.Subjects.Where(subject => subject.Name == comboBox1.SelectedItem.ToString()).FirstOrDefault().Name = textBox1.Text;
+                    dataBase.SaveChanges();
+                    textBox1.Text = string.Empty;
+                    UpdateSubjects();
+                    MessageBox.Show("Subject edited", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("This subject already exists", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Enter or choise subject", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void FormEditSubject_Load(object sender, EventArgs e)
         {
-            subjects = dataBase.Subjects.ToList();
-            foreach (var item in subjects)
-                comboBox1.Items.Add(item.Name);
+            UpdateSubjects();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

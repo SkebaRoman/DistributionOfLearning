@@ -77,6 +77,12 @@
     <Compile Include="FormAddPC.Designer.cs">
       <DependentUpon>FormAddPC.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddSemester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddSemester.Designer.cs">
+      <DependentUpon>FormAddSemester.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAddSoftware.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     <EmbeddedResource Include="FormAddPC.resx">
       <DependentUpon>FormAddPC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAddSemester.resx">
+      <DependentUpon>FormAddSemester.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddSoftware.resx">
       <DependentUpon>FormAddSoftware.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,7 +177,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditTeacher.resx">
       <DependentUpon>FormEditTeacher.cs</DependentUpon>
-      </EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEditAudience.resx">
       <DependentUpon>FormEditAudience.cs</DependentUpon>
     </EmbeddedResource>

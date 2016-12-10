@@ -34,6 +34,11 @@
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newTeacherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newSubjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newSemesterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newSoftwareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newPCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editAudiencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,8 +50,6 @@
             this.softwaresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView1 = new System.Windows.Forms.ListView();
             this.button1 = new System.Windows.Forms.Button();
-            this.newTeacherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newSubjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,30 +71,69 @@
             this.newGroupToolStripMenuItem,
             this.newStudentToolStripMenuItem,
             this.newTeacherToolStripMenuItem,
-            this.newSubjectToolStripMenuItem });
+            this.newSubjectToolStripMenuItem,
+            this.newSemesterToolStripMenuItem,
+            this.newSoftwareToolStripMenuItem,
+            this.newPCToolStripMenuItem});
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.newToolStripMenuItem.Text = "New audience";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // newGroupToolStripMenuItem
             // 
             this.newGroupToolStripMenuItem.Name = "newGroupToolStripMenuItem";
-            this.newGroupToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newGroupToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.newGroupToolStripMenuItem.Text = "New group";
             this.newGroupToolStripMenuItem.Click += new System.EventHandler(this.newGroupToolStripMenuItem_Click);
             // 
             // newStudentToolStripMenuItem
             // 
             this.newStudentToolStripMenuItem.Name = "newStudentToolStripMenuItem";
-            this.newStudentToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newStudentToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.newStudentToolStripMenuItem.Text = "New student";
             this.newStudentToolStripMenuItem.Click += new System.EventHandler(this.newStudentToolStripMenuItem_Click);
+            // 
+            // newTeacherToolStripMenuItem
+            // 
+            this.newTeacherToolStripMenuItem.Name = "newTeacherToolStripMenuItem";
+            this.newTeacherToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.newTeacherToolStripMenuItem.Text = "New teacher";
+            this.newTeacherToolStripMenuItem.Click += new System.EventHandler(this.newTeacherToolStripMenuItem_Click);
+            // 
+            // newSubjectToolStripMenuItem
+            // 
+            this.newSubjectToolStripMenuItem.Name = "newSubjectToolStripMenuItem";
+            this.newSubjectToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.newSubjectToolStripMenuItem.Text = "New subject";
+            this.newSubjectToolStripMenuItem.Click += new System.EventHandler(this.newSubjectToolStripMenuItem_Click);
+            // 
+            // newSemesterToolStripMenuItem
+            // 
+            this.newSemesterToolStripMenuItem.Name = "newSemesterToolStripMenuItem";
+            this.newSemesterToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.newSemesterToolStripMenuItem.Text = "New semester";
+            this.newSemesterToolStripMenuItem.Click += new System.EventHandler(this.newSemesterToolStripMenuItem_Click);
+            // 
+            // newSoftwareToolStripMenuItem
+            // 
+            this.newSoftwareToolStripMenuItem.Name = "newSoftwareToolStripMenuItem";
+            this.newSoftwareToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.newSoftwareToolStripMenuItem.Text = "New software";
+            this.newSoftwareToolStripMenuItem.Click += new System.EventHandler(this.newSoftwareToolStripMenuItem_Click);
+            // 
+            // newPCToolStripMenuItem
+            // 
+            this.newPCToolStripMenuItem.Name = "newPCToolStripMenuItem";
+            this.newPCToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.newPCToolStripMenuItem.Text = "New PC";
+            this.newPCToolStripMenuItem.Click += new System.EventHandler(this.newPCToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -113,6 +155,7 @@
             this.editAudiencesToolStripMenuItem.Name = "editAudiencesToolStripMenuItem";
             this.editAudiencesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.editAudiencesToolStripMenuItem.Text = "Audiences";
+            this.editAudiencesToolStripMenuItem.Click += new System.EventHandler(this.editAudiencesToolStripMenuItem_Click);
             // 
             // groupsToolStripMenuItem
             // 
@@ -152,12 +195,14 @@
             this.computersToolStripMenuItem.Name = "computersToolStripMenuItem";
             this.computersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.computersToolStripMenuItem.Text = "Computers";
+            this.computersToolStripMenuItem.Click += new System.EventHandler(this.computersToolStripMenuItem_Click);
             // 
             // softwaresToolStripMenuItem
             // 
             this.softwaresToolStripMenuItem.Name = "softwaresToolStripMenuItem";
             this.softwaresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.softwaresToolStripMenuItem.Text = "Softwares";
+            this.softwaresToolStripMenuItem.Click += new System.EventHandler(this.softwaresToolStripMenuItem_Click);
             // 
             // listView1
             // 
@@ -175,19 +220,6 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "GENERATE SCHEDULE";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // newTeacherToolStripMenuItem
-            // 
-            this.newTeacherToolStripMenuItem.Name = "newTeacherToolStripMenuItem";
-            this.newTeacherToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.newTeacherToolStripMenuItem.Text = "New teacher";
-            this.newTeacherToolStripMenuItem.Click += new System.EventHandler(this.newTeacherToolStripMenuItem_Click);
-            // newSubjectToolStripMenuItem
-            // 
-            this.newSubjectToolStripMenuItem.Name = "newSubjectToolStripMenuItem";
-            this.newSubjectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.newSubjectToolStripMenuItem.Text = "New subject";
-            this.newSubjectToolStripMenuItem.Click += new System.EventHandler(this.newSubjectToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -230,6 +262,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem newTeacherToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newSubjectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newSemesterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newSoftwareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newPCToolStripMenuItem;
     }
 }
 

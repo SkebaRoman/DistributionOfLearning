@@ -10,7 +10,6 @@ namespace ProgramLogicDll
         public string GraphicsCard { get; set; }
         public string Processor { get; set; }
         public int RAM { get; set; }
-        public int AudienceId { get; set; }
         public virtual Audience Audiences { get; set; }
         public virtual ICollection<Software> Softwares { get; set; }
     }
