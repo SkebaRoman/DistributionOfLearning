@@ -68,7 +68,7 @@ namespace UIApplication
                 });
                 dataBase.SaveChanges();
                 textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = textBox5.Text = textBox6.Text = string.Empty;
-                listBox2.Items.Clear(); UpdateSubjects();
+                listBox2.Items.Clear(); subjects.Clear(); UpdateSubjects();
                 MessageBox.Show("Teacher added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else

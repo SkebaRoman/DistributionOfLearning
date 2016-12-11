@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddGroup));
             this.labelGroupname = new System.Windows.Forms.Label();
             this.textBoxGroupname = new System.Windows.Forms.TextBox();
-            this.textBoxProfession = new System.Windows.Forms.TextBox();
             this.labelProfession = new System.Windows.Forms.Label();
             this.labelHours = new System.Windows.Forms.Label();
             this.labelSemester = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // labelGroupname
@@ -68,13 +68,6 @@
             this.textBoxGroupname.Name = "textBoxGroupname";
             this.textBoxGroupname.Size = new System.Drawing.Size(318, 20);
             this.textBoxGroupname.TabIndex = 1;
-            // 
-            // textBoxProfession
-            // 
-            this.textBoxProfession.Location = new System.Drawing.Point(86, 32);
-            this.textBoxProfession.Name = "textBoxProfession";
-            this.textBoxProfession.Size = new System.Drawing.Size(318, 20);
-            this.textBoxProfession.TabIndex = 3;
             // 
             // labelProfession
             // 
@@ -105,7 +98,6 @@
             // 
             // comboBoxSemester
             // 
-            this.comboBoxSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSemester.FormattingEnabled = true;
             this.comboBoxSemester.Location = new System.Drawing.Point(86, 84);
             this.comboBoxSemester.Name = "comboBoxSemester";
@@ -248,11 +240,20 @@
             this.textBox1.Size = new System.Drawing.Size(318, 20);
             this.textBox1.TabIndex = 22;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(86, 32);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(318, 21);
+            this.comboBox1.TabIndex = 23;
+            // 
             // FormAddGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(416, 435);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -271,7 +272,6 @@
             this.Controls.Add(this.comboBoxSemester);
             this.Controls.Add(this.labelSemester);
             this.Controls.Add(this.labelHours);
-            this.Controls.Add(this.textBoxProfession);
             this.Controls.Add(this.labelProfession);
             this.Controls.Add(this.textBoxGroupname);
             this.Controls.Add(this.labelGroupname);
@@ -292,7 +292,6 @@
 
         private System.Windows.Forms.Label labelGroupname;
         private System.Windows.Forms.TextBox textBoxGroupname;
-        private System.Windows.Forms.TextBox textBoxProfession;
         private System.Windows.Forms.Label labelProfession;
         private System.Windows.Forms.Label labelHours;
         private System.Windows.Forms.Label labelSemester;
@@ -312,5 +311,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
