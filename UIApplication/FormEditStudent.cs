@@ -39,7 +39,7 @@ namespace UIApplication
                 student.Profession = comboBox2.SelectedItem.ToString();
                 student.DateOfReceipt = dateTimePicker1.Value;
                 student.ExpirationDate = dateTimePicker2.Value;
-                dataBase.SaveChanges();
+                dataBase.SaveChanges(); students.Clear(); UpdateStudets();
                 MessageBox.Show("Student edited", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -64,11 +64,17 @@ namespace UIApplication
             }
         }
 
-        private void FormEditStudent_Load(object sender, EventArgs e)
+        private void UpdateStudets()
         {
             students = dataBase.Students.ToList();
+            comboBox1.Items.Clear(); comboBox1.Text = string.Empty;
             foreach (var item in students)
                 comboBox1.Items.Add(item.FirstName + " " + item.LastName);
+        }
+
+        private void FormEditStudent_Load(object sender, EventArgs e)
+        {
+            UpdateStudets();
         }
     }
 }
