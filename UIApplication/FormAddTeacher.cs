@@ -74,7 +74,6 @@ namespace UIApplication
         /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
-            dataBase = new ProgramLogicDll.ConnectDb();
             if (textBox1.Text != string.Empty && textBox2.Text != string.Empty && textBox3.Text != string.Empty && textBox4.Text != string.Empty && textBox5.Text != string.Empty && textBox6.Text != string.Empty)
             {
                 dataBase.Teachers.Add(new ProgramLogicDll.Teacher

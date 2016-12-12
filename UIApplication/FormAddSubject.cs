@@ -25,13 +25,14 @@ namespace UIApplication
         /// <param name="e"></param>
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (textBox1.Text != string.Empty)
+            if (textBox1.Text != string.Empty && comboBox1.SelectedIndex!=-1)
             {
                 if (db.Subjects.Where(name => name.Name == textBox1.Text).FirstOrDefault() == null)
                 {
-                    db.Subjects.Add(new Subject() { Name = textBox1.Text });
+                    int semestr = int.Parse(comboBox1.SelectedItem.ToString());
+                    db.Subjects.Add(new Subject() { Name = textBox1.Text, Semesters=db.Semesters.Where(sem=>sem.SemesterNumber==semestr).FirstOrDefault() });
                     db.SaveChanges();
-                    textBox1.Text = string.Empty;
+                    textBox1.Text = string.Empty; comboBox1.Text = string.Empty;  comboBox1.SelectedIndex = -1; 
                     MessageBox.Show("Subject added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -41,7 +42,7 @@ namespace UIApplication
             }
             else
             {
-                MessageBox.Show("Enter subject", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Enter subject or choise semester", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -53,6 +54,12 @@ namespace UIApplication
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FormAddSubject_Load(object sender, EventArgs e)
+        {
+            foreach (var item in db.Semesters)
+                comboBox1.Items.Add(item.SemesterNumber);
         }
     }
 }
