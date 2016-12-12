@@ -167,5 +167,15 @@ namespace UIApplication
         {
             new FormEditGroup().ShowDialog();
         }
+
+        /// <summary>
+        /// Метод для автоматичного генерування розподілу навчання 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new Generate().DistributionOfStudents();
+        }
     }
 }

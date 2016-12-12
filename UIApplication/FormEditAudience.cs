@@ -141,7 +141,7 @@ namespace UIApplication
         {
             if (textBox1.Text != null && textBox2.Text != null)
             {
-                if (Convert.ToInt32(textBox2.Text) > listBox2.Items.Count)
+                if (Convert.ToInt32(textBox2.Text) >= listBox2.Items.Count)
                 {
                     int audienceNumber = int.Parse(textBox1.Text);
 
