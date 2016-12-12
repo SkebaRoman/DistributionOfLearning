@@ -36,9 +36,14 @@ namespace UIApplication
             foreach (var item in dataBase.Softwares)
             {
                 bool check = true;
-                foreach (var item1 in softwares)
-                    if (item.Name == item1.Name)
+                foreach (var item1 in listBox2.Items)
+                {
+                    if (item1.ToString() == item.Name)
+                    {
                         check = false;
+                        break;
+                    }
+                }
                 if (check == true)
                     listBox1.Items.Add(item.Name);
             }

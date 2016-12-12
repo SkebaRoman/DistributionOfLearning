@@ -27,7 +27,7 @@ namespace UIApplication
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != string.Empty && textBox2.Text != string.Empty && textBox3.Text != string.Empty && textBox4.Text != string.Empty && textBox5.Text != string.Empty && comboBox2.SelectedIndex!=-1)
+            if (textBox1.Text != string.Empty && textBox2.Text != string.Empty && textBox3.Text != string.Empty && textBox4.Text != string.Empty && textBox5.Text != string.Empty && comboBox2.SelectedIndex!=-1 && comboBox1.SelectedIndex!=-1)
             {
                 int studentId = students[comboBox1.SelectedIndex].StudentId;
                 var student = dataBase.Students.Where(Id=>Id.StudentId == studentId).FirstOrDefault();
@@ -39,12 +39,13 @@ namespace UIApplication
                 student.Profession = comboBox2.SelectedItem.ToString();
                 student.DateOfReceipt = dateTimePicker1.Value;
                 student.ExpirationDate = dateTimePicker2.Value;
-                dataBase.SaveChanges(); students.Clear(); UpdateStudets();
+                textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = textBox5.Text = comboBox2.Text = string.Empty;
+                dataBase.SaveChanges(); UpdateStudets();
                 MessageBox.Show("Student edited", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Enter all fields", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Enter all fields or choise student", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

@@ -22,6 +22,8 @@ namespace UIApplication
 
         private void UpdateTeachers()
         {
+            subjects = new List<Subject>();
+            teachers = new List<Teacher>();
             teachers = dataBase.Teachers.ToList();
             comboBox1.Items.Clear(); comboBox1.Text = string.Empty;
             foreach (var item in teachers)
@@ -35,8 +37,10 @@ namespace UIApplication
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            subjects = new List<Subject>();
+            listBox1.Items.Clear(); listBox2.Items.Clear();
             int id = teachers[comboBox1.SelectedIndex].TeacherId;
-            var techer = dataBase.Teachers.Where(x=>x.TeacherId == id).FirstOrDefault();
+            var techer = dataBase.Teachers.Where(x => x.TeacherId == id).FirstOrDefault();
 
             textBox1.Text = techer.FirstName;
             textBox2.Text = techer.LastName;
@@ -44,17 +48,24 @@ namespace UIApplication
             textBox4.Text = techer.PhoneNumber;
             textBox5.Text = techer.Email;
             textBox6.Text = techer.Salary.ToString();
+            
             foreach (var item in techer.Subjects)
             {
                 listBox2.Items.Add(item.Name);
                 subjects.Add(item);
             }
+
             foreach (var item in dataBase.Subjects)
             {
                 bool check = true;
-                foreach (var item1 in subjects)
-                    if (item.Name == item1.Name)
+                foreach (var item1 in listBox2.Items)
+                {
+                    if (item1.ToString()==item.Name)
+                    {
                         check = false;
+                        break;
+                    }
+                }
                 if (check == true)
                     listBox1.Items.Add(item.Name);
             }
@@ -73,8 +84,9 @@ namespace UIApplication
                 teacher.Email = textBox5.Text;
                 teacher.Salary = Convert.ToDouble(textBox6.Text);
                 teacher.Subjects = subjects;
-                dataBase.SaveChanges();
-                MessageBox.Show("Save");
+                dataBase.SaveChanges(); listBox1.Items.Clear(); listBox2.Items.Clear(); UpdateTeachers();
+                textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = textBox5.Text = textBox6.Text = string.Empty;
+                MessageBox.Show("Teacher edited", "information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

@@ -89,5 +89,10 @@ namespace UIApplication
         {
             new FormEditAudience().ShowDialog();
         }
+
+        private void groupsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormEditGroup().ShowDialog();
+        }
     }
 }

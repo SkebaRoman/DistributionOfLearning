@@ -26,7 +26,7 @@ namespace UIApplication
 
         private void UpdateSoftwares()
         {
-            listBox1.Items.Clear();
+            listBox1.Items.Clear(); softwares = new List<Software>();
             foreach (var item in dataBase.Softwares)
                 listBox1.Items.Add(item.Name);
         }

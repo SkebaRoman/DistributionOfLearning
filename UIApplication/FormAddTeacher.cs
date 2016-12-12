@@ -54,6 +54,7 @@ namespace UIApplication
 
         private void button3_Click(object sender, EventArgs e)
         {
+            dataBase = new ProgramLogicDll.ConnectDb();
             if (textBox1.Text != string.Empty && textBox2.Text != string.Empty && textBox3.Text != string.Empty && textBox4.Text != string.Empty && textBox5.Text != string.Empty && textBox6.Text != string.Empty)
             {
                 dataBase.Teachers.Add(new ProgramLogicDll.Teacher
@@ -66,9 +67,9 @@ namespace UIApplication
                     Salary = double.Parse(textBox6.Text),
                     Subjects = subjects
                 });
-                dataBase.SaveChanges();
+                dataBase.SaveChanges(); 
                 textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = textBox5.Text = textBox6.Text = string.Empty;
-                listBox2.Items.Clear(); subjects.Clear(); UpdateSubjects();
+                listBox2.Items.Clear(); UpdateSubjects();
                 MessageBox.Show("Teacher added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -79,7 +80,7 @@ namespace UIApplication
 
         private void UpdateSubjects()
         {
-            listBox1.Items.Clear();
+            listBox1.Items.Clear(); subjects = new List<ProgramLogicDll.Subject>();
             foreach (var item in dataBase.Subjects)
                 listBox1.Items.Add(item.Name);
         }
