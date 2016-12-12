@@ -18,11 +18,21 @@ namespace UIApplication
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Закриття форми
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Метод для добавлення ПЗ
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != string.Empty)

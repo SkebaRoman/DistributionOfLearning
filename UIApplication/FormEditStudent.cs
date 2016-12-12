@@ -20,11 +20,21 @@ namespace UIApplication
             comboBox2.Items.AddRange(new string[] { "Programmer", "Administrator", "Designer" });
         }
 
+        /// <summary>
+        /// Закриття форми
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Метод для зберігання відредактованого студента
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != string.Empty && textBox2.Text != string.Empty && textBox3.Text != string.Empty && textBox4.Text != string.Empty && textBox5.Text != string.Empty && comboBox2.SelectedIndex!=-1 && comboBox1.SelectedIndex!=-1)
@@ -65,6 +75,9 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Обновлення ComboBox студентів
+        /// </summary>
         private void UpdateStudets()
         {
             students = dataBase.Students.ToList();

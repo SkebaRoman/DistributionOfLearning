@@ -18,11 +18,19 @@ namespace UIApplication
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Закриття форми
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Обновлення ComboBox предметів
+        /// </summary>
         private void UpdateSubjects()
         {
             comboBox1.Items.Clear(); comboBox1.Text = string.Empty;
@@ -30,6 +38,11 @@ namespace UIApplication
                 comboBox1.Items.Add(item.Name);
         }
 
+        /// <summary>
+        /// Збереження відредактованого предмету
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if (textBox1.Text!=string.Empty && comboBox1.SelectedIndex!=-1)

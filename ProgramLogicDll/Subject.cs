@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProgramLogicDll
 {
@@ -8,6 +9,6 @@ namespace ProgramLogicDll
         public int SubjectId { get; set; }
         public string Name { get; set; }
         public virtual Semester Semesters { get; set; }
-        public virtual Teacher Teachers { get; set; }
+        public virtual ICollection<Teacher> Teachers { get; set; }
     }
 }

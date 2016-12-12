@@ -80,6 +80,11 @@ namespace UIApplication
             textBox2.Text = Audience.NumberOfSeats.ToString();
         }
 
+        /// <summary>
+        /// Метод для добавлення компютера в аудиторію
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedIndex != -1)
@@ -95,6 +100,11 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Метод для видалення компютера з аудиторії
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             if (listBox2.SelectedIndex != -1)
@@ -112,11 +122,21 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Закриття форми
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Метод для зберігання відредактованої аудиторії
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != null && textBox2.Text != null)
@@ -154,6 +174,11 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Метод для добавлення групи в аудиторію
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button5_Click(object sender, EventArgs e)
         {
             if (listBox3.SelectedIndex != -1)
@@ -168,6 +193,11 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Метод для видалення групи з аудиторії
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button7_Click(object sender, EventArgs e)
         {
             if (listBox4.SelectedIndex != -1)

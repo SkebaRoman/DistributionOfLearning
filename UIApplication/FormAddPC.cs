@@ -31,6 +31,11 @@ namespace UIApplication
                 listBox1.Items.Add(item.Name);
         }
 
+        /// <summary>
+        /// Добавлення компютера
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != string.Empty && textBox2.Text != string.Empty && textBox3.Text != string.Empty)
@@ -53,11 +58,21 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Закриття форми
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Метод для добавлення ПЗ на компютер
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedIndex!=-1)
@@ -71,7 +86,11 @@ namespace UIApplication
                 MessageBox.Show("Choise software", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
+        /// <summary>
+        /// Видалення ПЗ з компютера
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             if (listBox2.SelectedIndex != -1)

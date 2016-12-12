@@ -8,9 +8,11 @@ namespace UIApplication
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+        /*!
+	        \author Скеба Роман, Потапенко Микита, Шалагінов Андрій
+	        \version 1.0 beta
+	        \date 12.12.2016
+        */
         [STAThread]
         static void Main()
         {
