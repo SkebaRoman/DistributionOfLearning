@@ -26,10 +26,15 @@ namespace UIApplication
         private void FormEditGroup_Load(object sender, EventArgs e)
         {
             comboBox1.Items.AddRange(new string[] { "Programmer", "Administrator", "Designer" });
+            UpdateGroup();
+        }
+
+        private void UpdateGroup()
+        {
+            comboBox2.Items.Clear();
+            comboBox2.Text = comboBox1.Text = comboBoxSemester.Text = string.Empty;
             foreach (var item in dataBase.Groups)
-            {
                 comboBox2.Items.Add(item.Name);
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -107,18 +112,24 @@ namespace UIApplication
         }
         private void UpdateGroups()
         {
+            listBox1.Items.Clear(); listBox2.Items.Clear();
+            listBoxStudents.Items.Clear(); listBoxTeachers.Items.Clear();
+            allStudents = new List<ProgramLogicDll.Student>();
+            allTeachers = new List<ProgramLogicDll.Teacher>();
+            students = new List<ProgramLogicDll.Student>();
+            teachers = new List<ProgramLogicDll.Teacher>();
             foreach (var item in dataBase.Semesters)
                 comboBoxSemester.Items.Add(item.SemesterNumber);
             var group = dataBase.Groups.Where(x => x.Name == comboBox2.SelectedItem.ToString()).FirstOrDefault();
             textBoxGroupname.Text = group.Name;
             textBox1.Text = group.HoursOfStudy;
-            comboBoxSemester.SelectedItem = group.Semesters;
+            comboBoxSemester.SelectedItem = group.Semesters.SemesterNumber;
             comboBox1.SelectedItem = group.Profession;
             foreach (var item in dataBase.Students)
             {
                 try
                 {
-                    if (item.Groups == null&&item.Profession==comboBox1.SelectedItem.ToString())
+                    if (item.Groups == null && item.Profession == comboBox1.SelectedItem.ToString())
                     {
                         listBoxStudents.Items.Add(item.FirstName + " " + item.LastName);
                         allStudents.Add(item);
@@ -126,10 +137,23 @@ namespace UIApplication
                 }
                 catch { }
             }
+
+            foreach (var item in group.Students)
+            {
+                listBox1.Items.Add(item.FirstName + " " + item.LastName);
+                students.Add(item);
+            }
+
+            foreach (var item in group.Teachers)
+            {
+                listBox2.Items.Add(item.FirstName+" " + item.LastName);
+                teachers.Add(item);
+            }
+
             allTeachers = dataBase.Teachers.ToList();
             foreach (var item in allTeachers)
                 listBoxTeachers.Items.Add(item.FirstName + " " + item.LastName);
-         
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -140,12 +164,12 @@ namespace UIApplication
                 var group = dataBase.Groups.Where(x => x.Name == comboBox2.SelectedItem.ToString()).FirstOrDefault();
 
                 group.Name = textBoxGroupname.Text;
-                   group.Profession = comboBox1.Text;
-                  group.HoursOfStudy = textBox1.Text;
-                  group.Semesters = dataBase.Semesters.Where(sem => sem.SemesterNumber == semestr).FirstOrDefault();
-                   group.Students = students;
-                   group.Teachers = teachers;
-               
+                group.Profession = comboBox1.Text;
+                group.HoursOfStudy = textBox1.Text;
+                group.Semesters = dataBase.Semesters.Where(sem => sem.SemesterNumber == semestr).FirstOrDefault();
+                group.Students = students;
+                group.Teachers = teachers;
+
                 dataBase.SaveChanges();
                 foreach (var item in students)
                 {
@@ -157,9 +181,11 @@ namespace UIApplication
                     dataBase.Teachers.Where(teacher => teacher.TeacherId == item.TeacherId).FirstOrDefault().Groups.Add(dataBase.Groups.Where(id => id.Name == textBoxGroupname.Text).FirstOrDefault());
                     dataBase.SaveChanges();
                 }
-                textBoxGroupname.Text = textBox1.Text = string.Empty;
+                textBoxGroupname.Text = textBox1.Text = comboBoxSemester.Text = comboBox1.Text = string.Empty;
                 listBox1.Items.Clear(); listBox2.Items.Clear();
-                MessageBox.Show("Group added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                listBoxStudents.Items.Clear(); listBoxTeachers.Items.Clear();
+                UpdateGroup();
+                MessageBox.Show("Group edited", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

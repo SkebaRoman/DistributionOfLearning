@@ -33,11 +33,18 @@ namespace UIApplication
         {
             if (listBoxStudents.SelectedIndex != -1)
             {
-                listBox1.Items.Add(listBoxStudents.SelectedItem);
                 int id = allStudents[listBoxStudents.SelectedIndex].StudentId;
-                students.Add(dataBase.Students.Where(Id => Id.StudentId == id).FirstOrDefault());
-                allStudents.RemoveAt(listBoxStudents.SelectedIndex);
-                listBoxStudents.Items.RemoveAt(listBoxStudents.SelectedIndex);
+                if (dataBase.Students.Where(Id => Id.StudentId == id).FirstOrDefault().Profession == comboBox1.SelectedItem.ToString() && comboBox1.SelectedIndex != -1)
+                {
+                    listBox1.Items.Add(listBoxStudents.SelectedItem);
+                    students.Add(dataBase.Students.Where(Id => Id.StudentId == id).FirstOrDefault());
+                    allStudents.RemoveAt(listBoxStudents.SelectedIndex);
+                    listBoxStudents.Items.RemoveAt(listBoxStudents.SelectedIndex);
+                }
+                else
+                {
+                    MessageBox.Show("Choise student or profession", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
@@ -47,13 +54,25 @@ namespace UIApplication
 
         private void FormAddGroup_Load(object sender, EventArgs e)
         {
+            UpdateData();
+        }
+
+        private void UpdateData()
+        {
+            listBox1.Items.Clear(); listBox2.Items.Clear();
+            comboBoxSemester.Items.Clear();
+            listBoxStudents.Items.Clear(); listBoxTeachers.Items.Clear();
+            allStudents = new List<ProgramLogicDll.Student>();
+            allTeachers = new List<ProgramLogicDll.Teacher>();
+            students = new List<ProgramLogicDll.Student>();
+            teachers = new List<ProgramLogicDll.Teacher>();
             foreach (var item in dataBase.Students)
             {
                 try
                 {
                     if (item.Groups == null)
                     {
-                        listBoxStudents.Items.Add(item.FirstName + " " + item.LastName);
+                        listBoxStudents.Items.Add(item.FirstName + " " + item.LastName + " " + item.Profession);
                         allStudents.Add(item);
                     }
                 }
@@ -61,7 +80,7 @@ namespace UIApplication
             }
             allTeachers = dataBase.Teachers.ToList();
             foreach (var item in allTeachers)
-                listBoxTeachers.Items.Add(item.FirstName + " " + item.LastName);
+                listBoxTeachers.Items.Add(item.FirstName + " " + item.LastName + " ");
             foreach (var item in dataBase.Semesters)
                 comboBoxSemester.Items.Add(item.SemesterNumber);
         }
@@ -140,7 +159,7 @@ namespace UIApplication
                     dataBase.SaveChanges();
                 }
                 textBoxGroupname.Text = textBox1.Text = string.Empty;
-                listBox1.Items.Clear(); listBox2.Items.Clear();
+                listBox1.Items.Clear(); listBox2.Items.Clear(); UpdateData();
                 MessageBox.Show("Group added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else

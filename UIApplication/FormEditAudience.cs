@@ -27,6 +27,8 @@ namespace UIApplication
 
         private void UpdateAudiences()
         {
+            computers = new List<ProgramLogicDll.Computer>();
+            Groups = new List<ProgramLogicDll.Group>();
             comboBox1.Items.Clear(); comboBox1.Text = string.Empty;
             foreach (var item in dataBase.Audiences)
                 comboBox1.Items.Add(item.AudienceNumber);
@@ -34,10 +36,14 @@ namespace UIApplication
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            computers = new List<ProgramLogicDll.Computer>();
+            Groups = new List<ProgramLogicDll.Group>();
+
             int audienceNumber = int.Parse(comboBox1.SelectedItem.ToString());
             var Audience = dataBase.Audiences.Where(number => number.AudienceNumber == audienceNumber).FirstOrDefault();
 
-            listBox1.Items.Clear();
+            listBox2.Items.Clear(); listBox1.Items.Clear();
+            listBox3.Items.Clear(); listBox4.Items.Clear();
             foreach (var item in dataBase.Computers)
             {
                 try
@@ -48,9 +54,27 @@ namespace UIApplication
                 catch { }
             }
 
-            listBox2.Items.Clear();
+            foreach (var item in dataBase.Groups)
+            {
+                try
+                {
+                    if (item.Audiences == null)
+                        listBox3.Items.Add(item.Name);
+                }
+                catch { }
+            }
+
             foreach (var item in Audience.Computers)
+            {
                 listBox2.Items.Add(item.ComputerId);
+                computers.Add(item);
+            }
+
+            foreach (var item in Audience.Groups)
+            {
+                listBox4.Items.Add(item.Name);
+                Groups.Add(item);
+            }
 
             textBox1.Text = Audience.AudienceNumber.ToString();
             textBox2.Text = Audience.NumberOfSeats.ToString();
@@ -97,7 +121,7 @@ namespace UIApplication
         {
             if (textBox1.Text != null && textBox2.Text != null)
             {
-                if (Convert.ToInt32(textBox2.Text) <= listBox2.Items.Count)
+                if (Convert.ToInt32(textBox2.Text) > listBox2.Items.Count)
                 {
                     int audienceNumber = int.Parse(textBox1.Text);
 
@@ -120,11 +144,9 @@ namespace UIApplication
                         dataBase.SaveChanges();
                     }
                     textBox1.Text = textBox2.Text = string.Empty;
-                    listBox1.Items.Clear(); listBox2.Items.Clear(); computers.Clear(); UpdateAudiences();
+                    listBox1.Items.Clear(); listBox2.Items.Clear(); listBox3.Items.Clear(); listBox4.Items.Clear(); UpdateAudiences();
                     MessageBox.Show("Audience edited", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else
-                    MessageBox.Show("This audience already exists", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -137,8 +159,7 @@ namespace UIApplication
             if (listBox3.SelectedIndex != -1)
             {
                 listBox4.Items.Add(listBox3.SelectedItem);
-                int Id = int.Parse(listBox3.SelectedItem.ToString());
-                Groups.Add(dataBase.Groups.Where(id => id.GroupId == Id).FirstOrDefault());
+                Groups.Add(dataBase.Groups.Where(id => id.Name == listBox3.SelectedItem.ToString()).FirstOrDefault());
                 listBox3.Items.RemoveAt(listBox3.SelectedIndex);
             }
             else
@@ -152,8 +173,7 @@ namespace UIApplication
             if (listBox4.SelectedIndex != -1)
             {
                 listBox3.Items.Add(listBox4.SelectedItem);
-                int Id = int.Parse(listBox4.SelectedItem.ToString());
-                Groups.Remove(dataBase.Groups.Where(id => id.GroupId == Id).FirstOrDefault());
+                Groups.Remove(dataBase.Groups.Where(id => id.Name == listBox4.SelectedItem.ToString()).FirstOrDefault());
                 listBox4.Items.RemoveAt(listBox4.SelectedIndex);
             }
             else

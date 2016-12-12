@@ -22,13 +22,24 @@ namespace UIApplication
 
         private void UpdateComputers()
         {
-            listBox1.Items.Clear();
+            listBox1.Items.Clear(); listBox2.Items.Clear(); computers = new List<ProgramLogicDll.Computer>();
+            listBox3.Items.Clear(); listBox4.Items.Clear();
+            Groups = new List<ProgramLogicDll.Group>();
             foreach (var item in dataBase.Computers)
             {
                 try
                 {
                     if (item.Audiences == null)
                         listBox1.Items.Add(item.ComputerId);
+                }
+                catch { }
+            }
+            foreach (var item in dataBase.Groups)
+            {
+                try
+                {
+                    if (item.Audiences == null)
+                        listBox3.Items.Add(item.Name);
                 }
                 catch { }
             }
@@ -64,17 +75,10 @@ namespace UIApplication
 
             if (listBox1.SelectedIndex != -1)
             {
-                if (Convert.ToInt32(textBox2.Text) <= listBox2.Items.Count)
-                {
-                    listBox2.Items.Add(listBox1.SelectedItem);
-                    int Id = int.Parse(listBox1.SelectedItem.ToString());
-                    computers.Add(dataBase.Computers.Where(id => id.ComputerId == Id).FirstOrDefault());
-                    listBox1.Items.RemoveAt(listBox1.SelectedIndex);
-                }
-                else
-                {
-                    MessageBox.Show("There are more computers than seats", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                listBox2.Items.Add(listBox1.SelectedItem);
+                int Id = int.Parse(listBox1.SelectedItem.ToString());
+                computers.Add(dataBase.Computers.Where(id => id.ComputerId == Id).FirstOrDefault());
+                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
             }
             else
             {
@@ -86,7 +90,7 @@ namespace UIApplication
         {
             if (textBox1.Text != null && textBox2.Text != null)
             {
-                if (Convert.ToInt32(textBox2.Text) <= listBox2.Items.Count)
+                if (Convert.ToInt32(textBox2.Text) > listBox2.Items.Count)
                 {
                     int audienceNumber = int.Parse(textBox1.Text);
                     if (dataBase.Audiences.Where(number => number.AudienceNumber == audienceNumber).FirstOrDefault() == null)
@@ -95,8 +99,7 @@ namespace UIApplication
                         {
                             AudienceNumber = int.Parse(textBox1.Text),
                             NumberOfSeats = int.Parse(textBox2.Text),
-                            Computers = computers
-                            ,
+                            Computers = computers,
                             Groups = Groups
                         });
                         dataBase.SaveChanges();
@@ -111,9 +114,8 @@ namespace UIApplication
                             dataBase.SaveChanges();
                         }
                         textBox1.Text = textBox2.Text = string.Empty;
-                        listBox2.Items.Clear(); computers.Clear();
+                        UpdateComputers();
                         MessageBox.Show("Audience added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                     }
                     else
                     {
@@ -136,8 +138,7 @@ namespace UIApplication
             if (listBox3.SelectedIndex != -1)
             {
                 listBox4.Items.Add(listBox3.SelectedItem);
-                int Id = int.Parse(listBox3.SelectedItem.ToString());
-                Groups.Add(dataBase.Groups.Where(id => id.GroupId == Id).FirstOrDefault());
+                Groups.Add(dataBase.Groups.Where(id => id.Name == listBox3.SelectedItem.ToString()).FirstOrDefault());
                 listBox3.Items.RemoveAt(listBox3.SelectedIndex);
             }
             else
@@ -151,8 +152,7 @@ namespace UIApplication
             if (listBox4.SelectedIndex != -1)
             {
                 listBox3.Items.Add(listBox4.SelectedItem);
-                int Id = int.Parse(listBox4.SelectedItem.ToString());
-                Groups.Remove(dataBase.Groups.Where(id => id.GroupId == Id).FirstOrDefault());
+                Groups.Remove(dataBase.Groups.Where(id => id.Name == listBox4.SelectedItem.ToString()).FirstOrDefault());
                 listBox4.Items.RemoveAt(listBox4.SelectedIndex);
             }
             else

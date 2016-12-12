@@ -162,6 +162,7 @@
             this.groupsToolStripMenuItem.Name = "groupsToolStripMenuItem";
             this.groupsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.groupsToolStripMenuItem.Text = "Groups";
+            this.groupsToolStripMenuItem.Click += new System.EventHandler(this.groupsToolStripMenuItem_Click);
             // 
             // studentsToolStripMenuItem
             // 
