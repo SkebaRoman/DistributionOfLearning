@@ -40,13 +40,19 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(107, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 20);
+            this.textBox1.Size = new System.Drawing.Size(363, 20);
             this.textBox1.TabIndex = 0;
             // 
             // label1
@@ -62,7 +68,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(107, 38);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(174, 20);
+            this.textBox2.Size = new System.Drawing.Size(363, 20);
             this.textBox2.TabIndex = 2;
             // 
             // label2
@@ -77,7 +83,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(119, 65);
+            this.label3.Location = new System.Drawing.Point(104, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 4;
@@ -88,7 +94,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(12, 86);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(269, 82);
+            this.listBox1.Size = new System.Drawing.Size(224, 82);
             this.listBox1.TabIndex = 5;
             // 
             // listBox2
@@ -96,7 +102,7 @@
             this.listBox2.FormattingEnabled = true;
             this.listBox2.Location = new System.Drawing.Point(12, 207);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(269, 82);
+            this.listBox2.Size = new System.Drawing.Size(224, 82);
             this.listBox2.TabIndex = 6;
             // 
             // button1
@@ -111,7 +117,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(192, 295);
+            this.button2.Location = new System.Drawing.Point(147, 295);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(89, 23);
             this.button2.TabIndex = 8;
@@ -131,7 +137,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(192, 324);
+            this.button4.Location = new System.Drawing.Point(381, 325);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(89, 23);
             this.button4.TabIndex = 10;
@@ -142,17 +148,77 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(104, 180);
+            this.label4.Location = new System.Drawing.Point(84, 181);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 13);
             this.label4.TabIndex = 11;
             this.label4.Text = "In current audience";
             // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.Location = new System.Drawing.Point(246, 86);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(224, 82);
+            this.listBox3.TabIndex = 12;
+            // 
+            // listBox4
+            // 
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.Location = new System.Drawing.Point(246, 207);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(224, 82);
+            this.listBox4.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(337, 70);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "All Groups";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(307, 181);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(99, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "In current audience";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(246, 295);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(89, 23);
+            this.button5.TabIndex = 16;
+            this.button5.Text = "Add Group";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(381, 295);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(89, 23);
+            this.button7.TabIndex = 18;
+            this.button7.Text = "Remove";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // FormAddAudience
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(293, 360);
+            this.ClientSize = new System.Drawing.Size(482, 360);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.listBox4);
+            this.Controls.Add(this.listBox3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -189,5 +255,11 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button7;
     }
 }

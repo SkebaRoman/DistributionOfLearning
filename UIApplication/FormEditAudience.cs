@@ -14,6 +14,7 @@ namespace UIApplication
     {
         ProgramLogicDll.ConnectDb dataBase = new ProgramLogicDll.ConnectDb();
         List<ProgramLogicDll.Computer> computers = new List<ProgramLogicDll.Computer>();
+        List<ProgramLogicDll.Group> Groups = new List<ProgramLogicDll.Group>();
         public FormEditAudience()
         {
             InitializeComponent();
@@ -96,27 +97,68 @@ namespace UIApplication
         {
             if (textBox1.Text != null && textBox2.Text != null)
             {
-                int audienceNumber = int.Parse(textBox1.Text);
-
-                int Id = int.Parse(comboBox1.SelectedItem.ToString());
-                var Audience = dataBase.Audiences.Where(number => number.AudienceNumber == Id).FirstOrDefault();
-                Audience.AudienceNumber = int.Parse(textBox1.Text);
-                Audience.NumberOfSeats = int.Parse(textBox2.Text);
-                Audience.Computers = computers;
-                dataBase.SaveChanges();
-
-                foreach (var item in computers)
+                if (Convert.ToInt32(textBox2.Text) <= listBox2.Items.Count)
                 {
-                    dataBase.Computers.Where(id => id.ComputerId == item.ComputerId).FirstOrDefault().Audiences = dataBase.Audiences.Where(number => number.AudienceNumber == audienceNumber).FirstOrDefault();
+                    int audienceNumber = int.Parse(textBox1.Text);
+
+                    int Id = int.Parse(comboBox1.SelectedItem.ToString());
+                    var Audience = dataBase.Audiences.Where(number => number.AudienceNumber == Id).FirstOrDefault();
+                    Audience.AudienceNumber = int.Parse(textBox1.Text);
+                    Audience.NumberOfSeats = int.Parse(textBox2.Text);
+                    Audience.Computers = computers;
+                    Audience.Groups = Groups;
                     dataBase.SaveChanges();
+
+                    foreach (var item in computers)
+                    {
+                        dataBase.Computers.Where(id => id.ComputerId == item.ComputerId).FirstOrDefault().Audiences = dataBase.Audiences.Where(number => number.AudienceNumber == audienceNumber).FirstOrDefault();
+                        dataBase.SaveChanges();
+                    }
+                    foreach (var item in Groups)
+                    {
+                        dataBase.Groups.Where(id => id.GroupId == item.GroupId).FirstOrDefault().Audiences = dataBase.Audiences.Where(number => number.AudienceNumber == audienceNumber).FirstOrDefault();
+                        dataBase.SaveChanges();
+                    }
+                    textBox1.Text = textBox2.Text = string.Empty;
+                    listBox1.Items.Clear(); listBox2.Items.Clear(); computers.Clear(); UpdateAudiences();
+                    MessageBox.Show("Audience edited", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                textBox1.Text = textBox2.Text = string.Empty;
-                listBox1.Items.Clear(); listBox2.Items.Clear(); computers.Clear(); UpdateAudiences();
-                MessageBox.Show("Audience edited", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("This audience already exists", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show("Enter all fields or choise audience", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (listBox3.SelectedIndex != -1)
+            {
+                listBox4.Items.Add(listBox3.SelectedItem);
+                int Id = int.Parse(listBox3.SelectedItem.ToString());
+                Groups.Add(dataBase.Groups.Where(id => id.GroupId == Id).FirstOrDefault());
+                listBox3.Items.RemoveAt(listBox3.SelectedIndex);
+            }
+            else
+            {
+                MessageBox.Show("Choise Group", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (listBox4.SelectedIndex != -1)
+            {
+                listBox3.Items.Add(listBox4.SelectedItem);
+                int Id = int.Parse(listBox4.SelectedItem.ToString());
+                Groups.Remove(dataBase.Groups.Where(id => id.GroupId == Id).FirstOrDefault());
+                listBox4.Items.RemoveAt(listBox4.SelectedIndex);
+            }
+            else
+            {
+                MessageBox.Show("Choise Group", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
