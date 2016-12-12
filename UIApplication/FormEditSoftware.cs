@@ -18,6 +18,9 @@ namespace UIApplication
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Обновлення ComboBox з ПЗ
+        /// </summary>
         private void UpdateSoftwares()
         {
             comboBox1.Items.Clear(); comboBox1.Text = string.Empty;
@@ -35,6 +38,11 @@ namespace UIApplication
             textBox1.Text = dataBase.Softwares.Where(software => software.Name == comboBox1.SelectedItem.ToString()).FirstOrDefault().Name;
         }
 
+        /// <summary>
+        /// Метод для збереження відредактованого ПЗ
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex != -1 && textBox1.Text != string.Empty)
@@ -58,6 +66,11 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Закриття форми
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();

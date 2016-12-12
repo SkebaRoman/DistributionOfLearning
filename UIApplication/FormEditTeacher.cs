@@ -20,6 +20,9 @@ namespace UIApplication
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Обновлення ComboBox вчителів
+        /// </summary>
         private void UpdateTeachers()
         {
             subjects = new List<Subject>();
@@ -71,6 +74,11 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Метод для зберігання відредактованого вчителя
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != string.Empty && textBox2.Text != string.Empty && textBox3.Text != string.Empty && textBox4.Text != string.Empty && textBox5.Text != string.Empty && textBox6.Text != string.Empty)
@@ -94,6 +102,11 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Метод для добавлення предмета який може вести вчитель
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedIndex != -1)
@@ -108,6 +121,11 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Метод для видалення предмта який може вести вчитель
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             if (listBox2.SelectedIndex != -1)
@@ -122,6 +140,11 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Закриття форми
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();

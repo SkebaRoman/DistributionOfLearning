@@ -49,6 +49,11 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Метод для добавлення ПЗ на компютер
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedIndex != -1)
@@ -63,6 +68,11 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Метод для видалення ПЗ з компютера
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             if (listBox2.SelectedIndex != -1)
@@ -77,11 +87,21 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Закриття форми
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Метод для зберігання відредактованого компютера
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != string.Empty && textBox2.Text != string.Empty && textBox3.Text != string.Empty && comboBox1.SelectedIndex != -1)

@@ -19,11 +19,21 @@ namespace UIApplication
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Закриття форми
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Метод для добавлення предмета який вчитель вміє вести
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedIndex != -1)
@@ -38,6 +48,11 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Видалення предмету який вчитель може вести
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             if (listBox2.SelectedIndex != -1)
@@ -52,6 +67,11 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Добавлення вчителя
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             dataBase = new ProgramLogicDll.ConnectDb();

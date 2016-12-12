@@ -1,6 +1,9 @@
 using System.Data.Entity;
 namespace ProgramLogicDll
 {
+    /// <summary>
+    /// Класс для генерування і доступу до таблиць в базі даних
+    /// </summary>
     public partial class ConnectDb : DbContext
     {
         public ConnectDb()

@@ -20,7 +20,10 @@ namespace UIApplication
             InitializeComponent();
         }
 
-        private void UpdateComputers()
+        /// <summary>
+        /// Метод для обновлення listBox з комп'ютерами і групами 
+        /// </summary>
+        private void UpdateData()
         {
             listBox1.Items.Clear(); listBox2.Items.Clear(); computers = new List<ProgramLogicDll.Computer>();
             listBox3.Items.Clear(); listBox4.Items.Clear();
@@ -47,9 +50,14 @@ namespace UIApplication
 
         private void FormAddAudience_Load(object sender, EventArgs e)
         {
-            UpdateComputers();
+            UpdateData();
         }
 
+        /// <summary>
+        /// Метод для видалення компютера з аудиторії
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             if (listBox2.SelectedIndex != -1)
@@ -65,14 +73,23 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Закриття форми
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Метод для добавлення компютера в аудиторію
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-
             if (listBox1.SelectedIndex != -1)
             {
                 listBox2.Items.Add(listBox1.SelectedItem);
@@ -86,6 +103,11 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Метод для добавлення аудиторії
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != null && textBox2.Text != null)
@@ -114,7 +136,7 @@ namespace UIApplication
                             dataBase.SaveChanges();
                         }
                         textBox1.Text = textBox2.Text = string.Empty;
-                        UpdateComputers();
+                        UpdateData();
                         MessageBox.Show("Audience added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -133,6 +155,11 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Метод для добавлення групи в аудиторію
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button5_Click(object sender, EventArgs e)
         {
             if (listBox3.SelectedIndex != -1)
@@ -147,6 +174,11 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Метод для видалення групи з аудиторії
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button7_Click(object sender, EventArgs e)
         {
             if (listBox4.SelectedIndex != -1)

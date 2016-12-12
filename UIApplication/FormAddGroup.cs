@@ -24,11 +24,20 @@ namespace UIApplication
             comboBox1.Items.AddRange(new string[] { "Programmer", "Administrator", "Designer" });
         }
 
+        /// <summary>
+        /// Закриття форми
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button6_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Метод для добавлення студента в групу
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             if (listBoxStudents.SelectedIndex != -1)
@@ -57,6 +66,9 @@ namespace UIApplication
             UpdateData();
         }
 
+        /// <summary>
+        /// Обновлення ліста з групами і вчителями
+        /// </summary>
         private void UpdateData()
         {
             listBox1.Items.Clear(); listBox2.Items.Clear();
@@ -85,6 +97,11 @@ namespace UIApplication
                 comboBoxSemester.Items.Add(item.SemesterNumber);
         }
 
+        /// <summary>
+        /// Метод для видалення студента з групи
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedIndex != -1)
@@ -101,6 +118,11 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Добавлення вчителя в групу
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             if (listBoxTeachers.SelectedIndex != -1)
@@ -117,6 +139,11 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Метод для видалення вчителя з групи
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button5_Click(object sender, EventArgs e)
         {
             if (listBox2.SelectedIndex != -1)
@@ -133,6 +160,11 @@ namespace UIApplication
             }
         }
 
+        /// <summary>
+        /// Метод для добавлення групи
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             if (textBoxGroupname.Text != string.Empty && comboBox1.SelectedIndex != -1 && textBox1.Text != string.Empty && comboBoxSemester.SelectedIndex != -1)

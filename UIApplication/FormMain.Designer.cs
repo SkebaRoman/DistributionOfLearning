@@ -45,7 +45,6 @@
             this.studentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.subjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teachersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.semestersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.computersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.softwaresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -143,7 +142,6 @@
             this.studentsToolStripMenuItem,
             this.subjectsToolStripMenuItem,
             this.teachersToolStripMenuItem,
-            this.semestersToolStripMenuItem,
             this.computersToolStripMenuItem,
             this.softwaresToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
@@ -184,12 +182,6 @@
             this.teachersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.teachersToolStripMenuItem.Text = "Teachers";
             this.teachersToolStripMenuItem.Click += new System.EventHandler(this.teachersToolStripMenuItem_Click);
-            // 
-            // semestersToolStripMenuItem
-            // 
-            this.semestersToolStripMenuItem.Name = "semestersToolStripMenuItem";
-            this.semestersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.semestersToolStripMenuItem.Text = "Semesters";
             // 
             // computersToolStripMenuItem
             // 
@@ -256,7 +248,6 @@
         private System.Windows.Forms.ToolStripMenuItem studentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem subjectsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem teachersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem semestersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem computersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem softwaresToolStripMenuItem;
         private System.Windows.Forms.ListView listView1;
